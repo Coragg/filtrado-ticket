@@ -1,0 +1,9 @@
+12333444-2,Maria Reyes,2
+13444555-6,Pedro Diaz,1
+19000111-3,Jose Duran,1
+13444555-6,Pedro Diaz,2
+19000111-3,Jose Duran,1
+13046178-6,Irene Zuccar,10
+11234581-k,Carolina Duarte,2
+7432988-8,Ignacio Paredes,1
+13043816-4,Eugenia Castro,2
