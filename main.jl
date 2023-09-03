@@ -96,6 +96,7 @@ function write_file(file_name::String, data::Vector)
     end
 end
 
+
 function main()
     println("Bienvenido a LollaPalooza")
     print("Ingrese el nombre del archivo de entrada: ")
