@@ -15,6 +15,7 @@ end
 
 
 function delete_repeat_data(data::Vector)
+    #= delete that repeat rut =#
     index = 1
     while index <= length(data)
         second_index = index + 1
@@ -32,6 +33,7 @@ end
 
 
 function penalty_tycket(ticket::UInt8)
+    #= filtration of the file =#
     if ticket >= 1 && ticket <= 2
         return ticket
     elseif ticket >= 3 && ticket <= 7
@@ -79,11 +81,14 @@ end
 
 
 function new_name(file_name::String)
+    #= change the extension of the file to .sal
+    param file_name: String of the file =#
    return split(file_name, ".")[1] * ".sal"
 end
 
 
 function write_file(file_name::String, data::Vector)
+    #= creation of the file .sal =#
     try
         sal_file = new_name(file_name)
         file = open(sal_file, "w")
