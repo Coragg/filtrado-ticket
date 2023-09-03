@@ -1,8 +1,8 @@
-#= definir quienes ganan las entradas si
-
-pila de prioridad
-cola de priordad 
-cola
+#= Definir los ganadores de las entradas si pideron:
+    * Pidieron 1 o 2 entradas, se les asigna la cantidad de entradas pedidas.
+    * Pidieron 3 a 7 entradas, se les asigna 2 entradas.
+    * Pidieron 8 a 15 entradas, se les asigna 1 entrada.
+    * Pidieron más de 15 entradas, no se les asigna ninguna entrada.
 =#
 
 
