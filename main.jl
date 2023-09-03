@@ -5,7 +5,6 @@
     * Pidieron más de 15 entradas, no se les asigna ninguna entrada.
 =#
 
-
 function change_infortation(first::String, second :: String)
     first = parse(UInt8, first)
     second = parse(UInt8, second)
