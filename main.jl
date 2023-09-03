@@ -85,11 +85,13 @@ end
 
 function write_file(file_name::String, data::Vector)
     try
-        file = open(new_name(file_name), "w")
+        sal_file = new_name(file_name)
+        file = open(sal_file, "w")
         for line in data
             write(file, join(line, ",") * "\n")
         end
         close(file)
+        println("Se a creado el archivo $sal_file ")
     catch
         println("Error al escribir el archivo $file_name.")
         exit()
