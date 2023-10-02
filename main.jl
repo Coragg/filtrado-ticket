@@ -4,6 +4,7 @@
     * Pidieron 8 a 15 entradas, se les asigna 1 entrada.
     * Pidieron más de 15 entradas, no se les asigna ninguna entrada.
 =#
+include("fileManage.jl")
 
 function change_infortation(first::String, second :: String)
     first = parse(UInt8, first)
@@ -56,21 +57,8 @@ function filter_tickets(data::Vector)
 end
 
 
-function generate_matrix_3xn(data:: Vector{String})
-    return [split(line, ",") for line in data]
-end 
+generate_matrix_3xn(data:: Vector{String}) = [split(line, ",") for line in data]
 
-
-function read_file(file_name::String)
-    try
-        file = open(file_name, "r")
-        lines = readlines(file)
-        return lines
-    catch 
-        println("Error al leer el archivo $file_name.")
-        exit()
-    end
-end
 
 
 function generate_and_filter_data(name_file::String)
@@ -78,35 +66,15 @@ function generate_and_filter_data(name_file::String)
     return generate_matrix_3xn(data)
 end
 
-
-function new_name(file_name::String)
-    #= change the extension of the file to .sal
-    param file_name: String of the file =#
-   return split(file_name, ".")[1] * ".sal"
-end
-
-
-function write_file(file_name::String, data::Vector)
-    #= creation of the file .sal =#
-    try
-        sal_file = new_name(file_name)
-        file = open(sal_file, "w")
-        for line in data
-            write(file, join(line, ",") * "\n")
-        end
-        close(file)
-        println("Se a creado el archivo $sal_file ")
-    catch
-        println("Error al escribir el archivo $file_name.")
-        exit()
-    end
+function ask_name_file_and_present()
+    println("Bienvenido a LollaPalooza")
+    print("Ingrese el nombre del archivo de entrada: ")
+    return readline()
 end
 
 
 function main()
-    println("Bienvenido a LollaPalooza")
-    print("Ingrese el nombre del archivo de entrada: ")
-    file_name = readline()
+    file_name = ask_name_file_and_present()
     data = generate_and_filter_data(file_name)
     data = filter_tickets(data)
     write_file(file_name, data)
