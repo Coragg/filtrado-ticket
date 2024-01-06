@@ -6,7 +6,7 @@
 =#
 include("fileManage.jl")
 
-function change_infortation(first::String, second :: String)
+function change_information(first::String, second :: String)
     first = parse(UInt8, first)
     second = parse(UInt8, second)
     suma = first + second
@@ -58,7 +58,6 @@ end
 
 
 generate_matrix_3xn(data:: Vector{String}) = [split(line, ",") for line in data]
-
 
 
 function generate_and_filter_data(name_file::String)
