@@ -21,7 +21,7 @@ function delete_repeat_data(data::Vector)
         second_index = index + 1
         while second_index <= length(data)
             if data[index][1] == data[second_index][1]
-                data[index][3] = change_infortation(string(data[index][3]), string(data[second_index][3]))
+                data[index][3] = change_information(string(data[index][3]), string(data[second_index][3]))
                 deleteat!(data, second_index)
             end
             second_index += 1
